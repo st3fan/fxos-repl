@@ -33,7 +33,7 @@ def start_repl(m):
             except Exception as e:
                 print "Error: " + str(e.message)
     except EOFError:
-        print "\nSayanora"
+        print "\nSayonara"
         pass
 
 if __name__ == "__main__":
