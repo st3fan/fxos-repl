@@ -1,7 +1,16 @@
+What is this?
+=============
 
-Quick docs for the 9.30pm release. More to follow tomorrow.
+This is a very simple REPL for Firefox OS. It allows you to list the running applications and then connect a very simple JavaScript console to it. Expressions that you type in the console will be executed in the context of the application that you are connected to. Under the same security permissions.
 
-This thing works but it is far from complete. If you have feature requests then please submit pull requests or file a bug.
+*You will need a device running a debug version of Firefox OS with Marionette support included*
+
+I put less than an hour into it so far. Will make much bigger improvements int he coming days.
+
+If you have feature requests then please submit pull requests or file a bug.
+
+How to get it going?
+====================
 
 One time setup of a virtualenv that contains the marionette client:
 
