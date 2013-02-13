@@ -23,9 +23,18 @@ def connect_to_iframe(m, name):
             return True
 
 def start_repl(m):
-    while True:
-        s = raw_input(">>> ")
-        print m.execute_script("return " + s)
+    try:
+        while True:
+            s = raw_input(">>> ")
+            if s is None:
+                break
+            try:
+                print m.execute_script("return " + s)
+            except Exception as e:
+                print "Error: " + str(e.message)
+    except EOFError:
+        print "\nSayanora"
+        pass
 
 if __name__ == "__main__":
     
@@ -40,6 +49,7 @@ if __name__ == "__main__":
         list_iframes(m)
     elif sys.argv[1] == 'connect':
         if connect_to_iframe(m, sys.argv[2]):
+            print "Connected to " + sys.argv[2]
             start_repl(m)
     else:
         usage()
