@@ -47,7 +47,7 @@ if __name__ == "__main__":
 
     if sys.argv[1] == 'list':
         list_iframes(m)
-    elif sys.argv[1] == 'connect':
+    elif (sys.argv[1] == 'connect') and (len(sys.argv) == 3):
         if connect_to_iframe(m, sys.argv[2]):
             print "Connected to " + sys.argv[2]
             start_repl(m)
