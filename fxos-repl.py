@@ -29,7 +29,7 @@ def start_repl(m):
             if s is None:
                 break
             try:
-                print m.execute_script("return " + s)
+                print m.execute_script("return " + s, new_sandbox=False)
             except Exception as e:
                 print "Error: " + str(e.message)
     except EOFError:
